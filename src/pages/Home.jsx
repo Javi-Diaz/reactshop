@@ -1,13 +1,11 @@
 import Header from "../components/Header/Header";
-/* import SliderInicio from "../components/SliderInicio/SliderInicio"; */
-
 import Informacion from "../components/Informacion/Informacion";
 import SlidersSecciones from "../components/SlidersSecciones/SlidersSecciones";
 import { useMemo, useContext, useState, Suspense, lazy } from "react";
 import Cuadricula from "../components/Cuadricula/Cuadricula";
 import SubscribeForm from "../components/SubscribeForm/SubscribeForm";
 import Footer from "../components/Footer/Footer";
-import BtnWspp from "../components/btnWspp/btnWspp";
+import BtnWspp from "../components/BtnWspp/BtnWspp";
 import { ProductsContext } from "../context/ProductContext";
 import { ModalContext } from "../context/ModalContext";
 import ModalEnProduccion from "../components/ModalEnProduccion/ModalEnProduccion";
