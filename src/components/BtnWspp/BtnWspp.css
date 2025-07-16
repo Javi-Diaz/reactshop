@@ -1,0 +1,14 @@
+.btnWspp{
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    font-size: 2rem;
+    background-color: #0000002f;
+    color: #000000;
+    padding: .8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}

@@ -1,0 +1,12 @@
+.cajaProduct{
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+    border-bottom: 1px solid #0000002b;
+}
+
+.cajaProduct img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}

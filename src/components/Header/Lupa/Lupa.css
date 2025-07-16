@@ -1,0 +1,91 @@
+.header-lupa{
+    width: 0dvw;
+    display: flex;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    flex-wrap: wrap;
+    transition: all 0.5s ease-in-out;
+}
+
+.header-lupa-abierto{
+    left: 0;
+    width: 100dvw;
+}
+
+
+.header-lupa-boxInput{
+    position: relative;
+    flex-grow: 2;
+    display: flex;
+}
+
+.header-lupa-input{
+    font-size: .9rem;
+    padding: 1rem 2rem 1rem .7rem;
+    flex-grow: 1;
+    outline: none;
+    border: 1px solid #00000099;
+    font-family: auto;
+}
+
+.header-lupa-iconoLupa{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.header-lupa-btnCerrar{
+    padding: 1rem;
+    border: 1px solid #00000099;
+    border-left: none;
+}
+
+.header-lupa-resultados{
+    width: 100dvw;
+    min-height: calc(100dvh - 123px );
+    background-color: #00000050;
+}
+
+.header-lupa-resultados h3{
+    padding: 1rem;
+}
+
+.header-resultadosBusqueda{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: calc(100dvh - 123px - 40px);
+}
+
+@media screen and (min-width:1024px){
+    .header-lupa{
+        justify-self: start;
+        position: relative;
+        left: 0;
+        height: 60px;
+        width: 275px;
+    }
+
+    .header-lupa-boxInput {
+        height: 60px;
+    }
+
+    .header-lupa-input{
+        border-radius: 4px;
+    }
+
+    .header-lupa-btnCerrar {
+        display: none;
+    }
+
+    .header-lupa-resultados {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .header-resultadosBusqueda{
+        height: auto;
+    }
+}

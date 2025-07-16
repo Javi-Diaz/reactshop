@@ -1,0 +1,32 @@
+.subscribeForm{
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.subscribeForm-titulo{
+    font-size: 2rem;
+}
+
+.subscribeForm-texto{
+    margin: 1rem 0;
+    color: #00000099;
+    font-size: 1.05rem;
+}
+
+.subscribeForm-input{
+    padding: 1rem .5rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: serif;
+    outline: none;
+}
+
+@media screen and (min-width:1024px){
+    .subscribeForm{
+        text-align: center;
+    }
+
+    .subscribeForm-input{
+        width: 300px;
+    }
+}

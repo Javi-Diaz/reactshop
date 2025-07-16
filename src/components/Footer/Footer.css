@@ -1,0 +1,56 @@
+.footer {
+    text-align: center;
+}
+
+.footer h4{
+    margin: 1rem 0 .5rem 0;
+    font-size: 1.2rem;
+}
+
+.footer-contacto p{
+    margin: .2rem 0;
+    font-size: 1.1rem;
+}
+
+.footer-categorias{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-categorias a{
+    margin: .2rem 0;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.footer-pagos-img{
+    width: 41px;
+    height: 27px;
+    object-fit: contain;
+    box-shadow: 0 2px 4px 3px rgba(0, 0, 0, .2);
+    margin: .5rem;
+}
+
+.footer-final{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width:1024px){
+    .footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .footer-categorias a {
+        margin: .2rem auto;
+        width: fit-content;
+    }
+
+    .footer-final{
+        grid-column: 1/-1;
+        border-top: 1px solid #0000002b;
+        padding-top: 1rem;
+    }
+}

@@ -1,0 +1,29 @@
+.informacionSection{
+    margin: 2rem 0;
+    padding: 1.2rem 1.5rem;
+}
+
+.informacion-boxCard{
+    display: flex;
+    align-items: center;
+}
+
+.informacion-boxCard:nth-child(2){
+    margin: 1.5rem 0;
+}
+
+.informacion-icono{
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.informacion-textos p{
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width:1024px){
+    .informacionSection{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

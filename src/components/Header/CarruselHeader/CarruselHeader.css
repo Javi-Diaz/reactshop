@@ -1,0 +1,39 @@
+.carruselHeader{
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem 1rem .5rem;
+    position: relative;
+}
+
+.prev,.next{
+    font-size: 1.35rem;
+    position: absolute;
+    background-color: #00000025;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.prev{
+    position: absolute;
+    left: 10px;
+}
+
+.carruselHeader h3{
+    text-align: center;
+    margin: auto;
+    max-width: 280px;
+}
+
+.next{
+    position: absolute;
+    right: 10px;
+}
+
+@media screen and (min-width:1024px){
+    .prev,.next{
+        cursor: pointer;
+    }
+}
+

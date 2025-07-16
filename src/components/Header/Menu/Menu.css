@@ -1,0 +1,135 @@
+.menu{
+    width: 0%;
+    height: 100dvh;
+    position: absolute;
+    top: 128%;
+    left: -100%;
+    background-color:#fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-abierto{
+    left: 0%;
+    width: 90%;
+}
+
+.menu-sombra{
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    z-index: -10;
+    left: 0;
+    background-color: #00000079;
+}
+
+.menu-textBtn{
+    display: flex;
+}
+
+.menu-textBtn h3{
+    margin: auto;
+}
+
+.menu-btnClose{
+    margin: 0 .5rem 0 0;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: none;
+    background-color: #00000021;
+    color: #0000006e;
+}
+
+.menu-nav{
+    padding: 1rem;
+    
+}
+
+.menu-nav ul li{
+    list-style: none;
+    padding: 1rem 0;
+    border-bottom: 1px solid #00000099;
+    font-size: 1.1rem;
+}
+
+.menu-nav a{
+    text-decoration: none;
+    display: block;
+}
+
+.menu-nav-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-nav-content ul{
+    margin-left: 1rem;
+}
+
+.menu-nav-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease;
+}
+
+.menu-nav-content-abierto{
+    max-height: 500px;
+}
+
+
+@media screen and (min-width:1024px){
+    .menu{
+        position: relative;
+        top: 0;
+        left: 0;
+        order: 1;
+        width: 100%;
+        height: auto;
+        background-color: unset;
+        grid-column: 1 / -1;
+    }
+    .menu-sombra{
+        display: none;
+    }
+    .menu .logo-redes{
+        display: none;
+    }
+    
+    .menu-textBtn{
+        display: none;
+    }
+    .menu-nav{
+        text-align: center;
+        padding: 1rem 1rem 0;
+    }
+
+    .menu-nav ul{
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-nav ul li{
+        margin: 0 1rem;
+        padding: .5rem 0;
+        border-bottom: none;
+        cursor: pointer;
+    }
+
+    .menu-nav-header{
+        display: unset;
+    }
+
+    .menu-nav-header span{
+        margin-left: .5rem;
+    }
+
+    .menu-nav-content ul{
+        flex-direction: column;
+    }
+}
