@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import imgRemera from "../../assets/remera3.png";
-import imgBuzo from "../../assets/buzo3.jpeg";
-import imgCampera from "../../assets/campera1.png";
-import imgJean from "../../assets/pantalon2.jpeg";
+import imgRemera from "../../../public/img/remera3.png";
+import imgBuzo from "../../../public/img/buzo3.jpeg";
+import imgCampera from "../../../public/img/campera1.png";
+import imgJean from "../../../public/img/pantalon2.jpeg";
 import "./Cuadricula.css"
 import { useContext } from "react";
 import { ModalContext } from "../../context/ModalContext";

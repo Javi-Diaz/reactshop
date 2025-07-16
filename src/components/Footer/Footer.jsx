@@ -1,10 +1,10 @@
 import { FaInstagram, FaFacebookF,FaWhatsapp } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
-import mp from "../../assets/footer/mp.jpg"
-import mastercard from "../../assets/footer/mastercard.jpg"
-import visa from "../../assets/footer/visa.jpg"
-import american from "../../assets/footer/american.jpg"
-import pagoFacil from "../../assets/footer/pagoFacil.jpg"
+import mp from "../../../public/img/footer/mp.jpg"
+import mastercard from "../../../public/img/footer/mastercard.jpg"
+import visa from "../../../public/img/footer/visa.jpg"
+import american from "../../../public/img/footer/american.jpg"
+import pagoFacil from "../../../public/img/footer/pagoFacil.jpg"
 import "./Footer.css"
 import LogoRedes from "../LogoRedes/LogoRedes";
 

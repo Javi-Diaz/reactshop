@@ -1,6 +1,6 @@
-import img1 from "../../assets/sliderInicio/1.jpg"
-import img2 from "../../assets/sliderInicio/2.webp"
-import img3 from "../../assets/sliderInicio/3.webp"
+import img1 from "../../../public/img/sliderInicio/1.jpg"
+import img2 from "../../../public/img/sliderInicio/2.webp"
+import img3 from "../../../public/img/sliderInicio/3.webp"
 import "./SliderInicio.css"
 import { useState } from "react"
 
