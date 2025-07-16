@@ -28,9 +28,7 @@ function Results({busqueda}){
             )
         }))
     }   
-    /*  */
-
-    
+  
 }
 
 export default Results;

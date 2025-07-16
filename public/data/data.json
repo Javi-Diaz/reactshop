@@ -4,7 +4,7 @@
         "name": "Remera OVERSIZED Earned Not Given Tee",
         "type":"Remera",
         "price": 5,
-        "img":"../../src/assets/remera1.png",
+        "img":"../src/assets/remera1.png",
         "quanty": 1
     },
     {
@@ -12,7 +12,7 @@
         "name": "Remera OVERSIZED Commit To The Hustle Tee",
         "type":"Remera",
         "price": 5,
-        "img":"../../src/assets/remera2.png",
+        "img":"../src/assets/remera2.png",
         "quanty": 1
     },
     {
@@ -20,7 +20,7 @@
         "name": "Remera OVERSIZED Relentless Tee",
         "type":"Remera",
         "price": 5,
-        "img":"../../src/assets/remera3.png",
+        "img":"../src/assets/remera3.png",
         "quanty": 1
     },
     {
@@ -28,7 +28,7 @@
         "name": "Buzo Cabelas",
         "type":"Buzo",
         "price":5,
-        "img":"../../src/assets/buzo1.jpeg",
+        "img":"../src/assets/buzo1.jpeg",
         "quanty": 1
     },
     {
@@ -36,7 +36,7 @@
         "name": "Buzo LEE Red Wings gris",
         "type":"Buzo",
         "price":5,
-        "img":"../../src/assets/buzo2.jpeg",
+        "img":"../src/assets/buzo2.jpeg",
         "quanty": 1
     },
     {
@@ -44,7 +44,7 @@
         "name": "Buzo High Style Athletics dept. Black",
         "type":"Buzo",
         "price": 5,
-        "img":"../../src/assets/buzo3.jpeg",
+        "img":"../src/assets/buzo3.jpeg",
         "quanty": 1
     },
     {
@@ -52,7 +52,7 @@
         "name": "Campera HIGHSTYLE APPARELL Negra",
         "type":"Campera",
         "price": 5,
-        "img":"../../src/assets/campera1.png",
+        "img":"../src/assets/campera1.png",
         "quanty": 1
     },
     {
@@ -60,7 +60,7 @@
         "name": "Campera HIGHSTYLE APPARELL LB",
         "type":"Campera",
         "price": 5,
-        "img":"../../src/assets/campera2.jpeg",
+        "img":"../src/assets/campera2.jpeg",
         "quanty": 1
     },
     {
@@ -68,7 +68,7 @@
         "name": "Campera HIGHSTYLE APPARELL LB",
         "type":"Campera",
         "price": 5,
-        "img":"../../src/assets/campera3.jpeg",
+        "img":"../src/assets/campera3.jpeg",
         "quanty": 1
     },
     {
@@ -76,7 +76,7 @@
         "name": "Jean Baggy Moscu",
         "type":"Jean",
         "price": 5,
-        "img":"../../src/assets/pantalon1.jpeg",
+        "img":"../src/assets/pantalon1.jpeg",
         "quanty": 1
     },
     {
@@ -84,7 +84,7 @@
         "name": "Jean Baggy Grench",
         "type":"Jean",
         "price": 5,
-        "img":"../../src/assets/pantalon2.jpeg",
+        "img":"../src/assets/pantalon2.jpeg",
         "quanty": 1
     },
     {
@@ -92,7 +92,7 @@
         "name": "Jean Baggy Nomade",
         "type":"Jean",
         "price": 5,
-        "img":"../../src/assets/pantalon3.jpeg",
+        "img":"../src/assets/pantalon3.jpeg",
         "quanty": 1
     }
 ]
