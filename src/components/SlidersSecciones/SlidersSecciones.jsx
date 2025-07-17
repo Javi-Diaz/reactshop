@@ -16,7 +16,7 @@ function SlidersSecciones({titulo,data}){
             const scrollLeft = container.scrollLeft;
             const width = container.clientWidth;
 
-            const offset = width * 0.3;
+            const offset = width * 0.4;
 
             const currentIndex = Math.floor((scrollLeft + offset) / width) + 1;
             setIndex(currentIndex);
