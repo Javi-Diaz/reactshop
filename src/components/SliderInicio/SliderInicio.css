@@ -29,7 +29,7 @@
 }
 
 .sliderInicio-imgsBox{
-    width: 300dvw;
+    width: 300%;
     display: flex;
     transition: transform 0.5s ease;
 }
