@@ -24,9 +24,18 @@ function Menu({toggleMenu, mostrarMenu, scrollToSection, inicioRef,loMasNuevoRef
                 </div>
                 <nav className="menu-nav">
                     <ul>
-                        <li><NavLink onClick={()=>{scrollToSection(inicioRef)}}>Inicio</NavLink></li>
-                        <li><NavLink onClick={()=>{scrollToSection(loMasNuevoRef)}}>Lo mas nuevo</NavLink></li>
-                        <li><NavLink onClick={()=>{scrollToSection(destacadoRef)}}>Destacado</NavLink></li>
+                        <li><NavLink onClick={()=>{
+                            scrollToSection(inicioRef)
+                            toggleMenu()
+                            }}>Inicio</NavLink></li>
+                        <li><NavLink onClick={()=>{
+                            scrollToSection(loMasNuevoRef)
+                            toggleMenu()
+                            }}>Lo mas nuevo</NavLink></li>
+                        <li><NavLink onClick={()=>{
+                            scrollToSection(destacadoRef)
+                            toggleMenu()
+                        }}>Destacado</NavLink></li>
                         <li>
                             <div className="menu-nav-desplegable">
                                 <div className="menu-nav-header" onClick={()=>{toggleIcon()}}>Productos <span>{changeIcon ? "-" : "+"}</span></div>
@@ -41,7 +50,10 @@ function Menu({toggleMenu, mostrarMenu, scrollToSection, inicioRef,loMasNuevoRef
                                 
                             </div>
                         </li>
-                        <li><NavLink onClick={()=>{scrollToSection(promocionesRef)}}>Promociones</NavLink></li>
+                        <li><NavLink onClick={()=>{
+                            scrollToSection(promocionesRef)
+                            toggleMenu()
+                        }}>Promociones</NavLink></li>
                     </ul>
                     
                 </nav>
