@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header";
 import Informacion from "../components/Informacion/Informacion";
 import SlidersSecciones from "../components/SlidersSecciones/SlidersSecciones";
-import { useMemo, useContext, useState, Suspense, lazy } from "react";
+import { useMemo, useContext, Suspense, lazy, useRef } from "react";
 import Cuadricula from "../components/Cuadricula/Cuadricula";
 import SubscribeForm from "../components/SubscribeForm/SubscribeForm";
 import Footer from "../components/Footer/Footer";
@@ -16,7 +16,7 @@ function Home(){
   const products = useContext(ProductsContext)
   const { mostrarModal, toggleModal } = useContext(ModalContext);
 
-  // Agrupación y filtrado con useMemo
+  // Agrupación y filtrado con useMemo de SlidersSecciones
   const { primerSet, segundoSet, tercerSet } = useMemo(() => {
     const agrupados = {};
 
@@ -42,18 +42,28 @@ function Home(){
       tercerSet: tercero
     };
   }, [products]);
+
+  // Redireccionamiento a las secciones
+  const inicioRef = useRef();
+  const loMasNuevoRef = useRef();
+  const destacadoRef = useRef();
+  const promocionesRef = useRef();
   
+
+  const scrollToSection = (ref)=>{
+    ref.current?.scrollIntoView({ behavior: "smooth"})
+  }
 
     return(
         <>
             <BtnWspp/>
-            <Header/>
-            <SliderInicio/>  
+            <Header scrollToSection={scrollToSection} inicioRef={inicioRef} loMasNuevoRef={loMasNuevoRef} destacadoRef={destacadoRef} promocionesRef={promocionesRef}/>
+            <SliderInicio id="inicio" ref={inicioRef}/>  
             <Informacion/>
             <Suspense fallback={<Loader/>}>
-              <SlidersSecciones titulo={"Lo mas nuevo"} data={primerSet} />
-              <SlidersSecciones titulo={"Destacado"} data={segundoSet} />
-              <SlidersSecciones titulo={"Promociones"} data={tercerSet} />
+              <SlidersSecciones id="loMasNuevo" titulo={"Lo mas nuevo"} data={primerSet} ref={loMasNuevoRef}/>
+              <SlidersSecciones id="destacado" titulo={"Destacado"} data={segundoSet} ref={destacadoRef}/>
+              <SlidersSecciones id="promociones" titulo={"Promociones"} data={tercerSet} ref={promocionesRef}/>
             </Suspense>
             <Cuadricula/>
             <SubscribeForm/>

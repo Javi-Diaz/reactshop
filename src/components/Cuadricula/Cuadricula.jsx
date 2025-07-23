@@ -11,7 +11,7 @@ function Cuadricula(){
     const {toggleModal} = useContext(ModalContext)
 
     return(
-        <section className="cuadricula">
+        <section id="cuadricula" className="cuadricula">
             <Link onClick={toggleModal}>
                 <div className="cuadricula-card">
                     <div className="cuadricula-card-sombra"></div>

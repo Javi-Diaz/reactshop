@@ -4,7 +4,7 @@ import "./Informacion.css"
 
 function Informacion(){
     return(
-        <section className="informacionSection">
+        <section id="informacionSection" className="informacionSection">
             <div className="informacion-boxCard">
                 <FaTruck className="informacion-icono"/>
                 <div className="informacion-textos">

@@ -1,4 +1,8 @@
 .sliderInicio{
+    scroll-margin-top: 145px;
+}
+
+.sliderInicio-container{
     display: flex;
     position: relative;
     width: 100dvw;
@@ -42,8 +46,13 @@
 
 @media screen and (min-width:1024px){
     .sliderInicio{
+        scroll-margin-top: 222px;
+    }   
+
+    .sliderInicio-container{
         max-height: 700px;
         background-color: #ffe4c454;
+        scroll-margin-top: 222px;
     }
 
     .sliderInicio-botones{

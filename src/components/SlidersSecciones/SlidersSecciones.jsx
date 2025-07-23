@@ -1,10 +1,10 @@
 import "./SlidersSecciones.css"
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState, useContext } from "react";
+import { useEffect, useRef, useState, useContext, forwardRef } from "react";
 import { ModalContext } from "../../context/ModalContext";
 
 
-function SlidersSecciones({titulo,data}){
+const SlidersSecciones = forwardRef(({titulo,data, id}, externalRef) => {
     
     const containerRef = useRef(null);
     const [index, setIndex] = useState(1); 
@@ -33,7 +33,7 @@ function SlidersSecciones({titulo,data}){
     const { toggleModal } = useContext(ModalContext);
 
     return(
-        <section className="slidersSecciones">
+        <section id={id} ref={externalRef} className="slidersSecciones">
             <h2 className="slidersSecciones-titulo">{titulo}</h2>
             <span className="slidersSecciones-posicion">{index}/{data.length}</span>
             <div className="slidersSecciones-boxCards" ref={containerRef}>
@@ -61,6 +61,6 @@ function SlidersSecciones({titulo,data}){
             
         </section>
     )
-}
+})
 
 export default SlidersSecciones;

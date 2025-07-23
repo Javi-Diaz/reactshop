@@ -1,13 +1,18 @@
 import { NavLink } from "react-router-dom"
 import "./Menu.css"
-import { useState } from "react";
+import { useState, useContext } from "react";
 import LogoRedes from "../../LogoRedes/LogoRedes";
+import { ModalContext } from "../../../context/ModalContext";
 
-function Menu({toggleMenu, mostrarMenu}){
+
+function Menu({toggleMenu, mostrarMenu, scrollToSection, inicioRef,loMasNuevoRef, destacadoRef, promocionesRef}){
     const [changeIcon, setChangeIcon] = useState(false)
     const toggleIcon= ()=>{
         setChangeIcon(!changeIcon)
     }
+
+    //Mostar modal en produccion
+    const { toggleModal } = useContext(ModalContext);   
 
     return(
             <div className={`menu ${mostrarMenu ? "menu-abierto" : ""}`}>
@@ -19,24 +24,24 @@ function Menu({toggleMenu, mostrarMenu}){
                 </div>
                 <nav className="menu-nav">
                     <ul>
-                        <li><NavLink>Inicio</NavLink></li>
-                        <li><NavLink>Lo mas nuevo</NavLink></li>
-                        <li><NavLink>Destacado</NavLink></li>
+                        <li><NavLink onClick={()=>{scrollToSection(inicioRef)}}>Inicio</NavLink></li>
+                        <li><NavLink onClick={()=>{scrollToSection(loMasNuevoRef)}}>Lo mas nuevo</NavLink></li>
+                        <li><NavLink onClick={()=>{scrollToSection(destacadoRef)}}>Destacado</NavLink></li>
                         <li>
                             <div className="menu-nav-desplegable">
                                 <div className="menu-nav-header" onClick={()=>{toggleIcon()}}>Productos <span>{changeIcon ? "-" : "+"}</span></div>
                                 <div className={`menu-nav-content ${changeIcon ? "menu-nav-content-abierto" : ""}`}>
                                     <ul>
-                                        <li><NavLink>Remeras</NavLink></li>
-                                        <li><NavLink>Buzos</NavLink></li>
-                                        <li><NavLink>Camperas</NavLink></li>
-                                        <li><NavLink>Jeans</NavLink></li>
+                                        <li><NavLink onClick={toggleModal}>Remeras</NavLink></li>
+                                        <li><NavLink onClick={toggleModal}>Buzos</NavLink></li>
+                                        <li><NavLink onClick={toggleModal}>Camperas</NavLink></li>
+                                        <li><NavLink onClick={toggleModal}>Jeans</NavLink></li>
                                     </ul>
                                 </div>
                                 
                             </div>
                         </li>
-                        <li><NavLink>Promociones</NavLink></li>
+                        <li><NavLink onClick={()=>{scrollToSection(promocionesRef)}}>Promociones</NavLink></li>
                     </ul>
                     
                 </nav>

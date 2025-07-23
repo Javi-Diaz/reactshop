@@ -5,10 +5,9 @@ import { useState, useCallback, useContext } from "react";
 import CarruselHeader from "./CarruselHeader/CarruselHeader";
 import Lupa from "./Lupa/Lupa";
 import { Link } from "react-router-dom";
-import ModalEnProduccion from "../ModalEnProduccion/ModalEnProduccion";
 import { ModalContext } from "../../context/ModalContext";
 
-function Header(){
+function Header({scrollToSection, inicioRef,loMasNuevoRef,destacadoRef,promocionesRef}){
     //Abrir menu
     const [mostrarMenu,setMostrarMenu] = useState(false)
     const toggleMenu = useCallback(() => {
@@ -29,7 +28,7 @@ function Header(){
             <CarruselHeader/>
             <div className="header-navegation">
                 <FaAlignJustify className="header-navegation-icon menu-icon" onClick={()=>{toggleMenu()}}/>
-                <Menu mostrarMenu={mostrarMenu} toggleMenu={toggleMenu} />
+                <Menu mostrarMenu={mostrarMenu} toggleMenu={toggleMenu} scrollToSection={scrollToSection} inicioRef={inicioRef} loMasNuevoRef={loMasNuevoRef} destacadoRef={destacadoRef} promocionesRef={promocionesRef}/>
                 <FaSearch className="header-navegation-icon search-icon" onClick={()=>{toggleLupa()}}/>
                 <Lupa mostrarLupa={mostrarLupa} toggleLupa={toggleLupa}/>
                 <Link className="header-logo" to={"/"}><h1>ReactShop</h1></Link>

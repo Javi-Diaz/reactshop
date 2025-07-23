@@ -1,6 +1,6 @@
 .slidersSecciones{
-    overflow: hidden;
     margin: 3rem 0;
+    scroll-margin-top: 145px;
 }
 
 .slidersSecciones-titulo{
@@ -37,7 +37,7 @@
 }
 
 .slidersSecciones-card-img{
-    width: 320px;
+    width: 100%;
     height: 400px;
     object-fit: contain;
 }
@@ -57,12 +57,17 @@
 }
 
 @media screen and (min-width:1024px){
+    .slidersSecciones{
+    scroll-margin-top: 222px;
+    }
+
     .slidersSecciones-posicion{
         display: none;
     }
 
     .slidersSecciones-boxCards{
-        justify-content: space-evenly;
+        justify-content: center;
+        scrollbar-width: thin;
     }
 
     .slidersSecciones-card{

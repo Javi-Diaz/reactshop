@@ -9,7 +9,7 @@ function Lupa({toggleLupa, mostrarLupa}){
     return(
         <div className={`header-lupa ${mostrarLupa ? "header-lupa-abierto" : ""}`}>
             <div className="header-lupa-boxInput">
-                <input className="header-lupa-input" type="text" placeholder="Buscar" 
+                <input className="header-lupa-input" type="text" placeholder="Buscar producto" 
                     onChange={(e)=>{
                         setBusqueda(e.target.value)
                     }}
