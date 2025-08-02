@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Remera OVERSIZED Earned Not Given Tee",
         "type":"Remera",
-        "price": 5,
+        "price": 9000,
         "img":"/img/remera1.png",
         "quanty": 1
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "name": "Remera OVERSIZED Commit To The Hustle Tee",
         "type":"Remera",
-        "price": 5,
+        "price": 9000,
         "img":"/img/remera2.png",
         "quanty": 1
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "name": "Remera OVERSIZED Relentless Tee",
         "type":"Remera",
-        "price": 5,
+        "price": 9000,
         "img":"/img/remera3.png",
         "quanty": 1
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "name": "Buzo Cabelas",
         "type":"Buzo",
-        "price":5,
+        "price":15000,
         "img":"/img/buzo1.jpeg",
         "quanty": 1
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "name": "Buzo LEE Red Wings gris",
         "type":"Buzo",
-        "price":5,
+        "price":15000,
         "img":"/img/buzo2.jpeg",
         "quanty": 1
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "name": "Buzo High Style Athletics dept. Black",
         "type":"Buzo",
-        "price": 5,
+        "price": 15000,
         "img":"/img/buzo3.jpeg",
         "quanty": 1
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "name": "Campera HIGHSTYLE APPARELL Negra",
         "type":"Campera",
-        "price": 5,
+        "price": 20000,
         "img":"/img/campera1.png",
         "quanty": 1
     },
@@ -59,7 +59,7 @@
         "id": 8,
         "name": "Campera HIGHSTYLE APPARELL LB",
         "type":"Campera",
-        "price": 5,
+        "price": 20000,
         "img":"/img/campera2.jpeg",
         "quanty": 1
     },
@@ -67,7 +67,7 @@
         "id": 9,
         "name": "Campera HIGHSTYLE APPARELL LB",
         "type":"Campera",
-        "price": 5,
+        "price": 20000,
         "img":"/img/campera3.jpeg",
         "quanty": 1
     },
@@ -75,7 +75,7 @@
         "id": 10,
         "name": "Jean Baggy Moscu",
         "type":"Jean",
-        "price": 5,
+        "price": 18000,
         "img":"/img/pantalon1.jpeg",
         "quanty": 1
     },
@@ -83,7 +83,7 @@
         "id": 11,
         "name": "Jean Baggy Grench",
         "type":"Jean",
-        "price": 5,
+        "price": 18000,
         "img":"/img/pantalon2.jpeg",
         "quanty": 1
     },
@@ -91,7 +91,7 @@
         "id": 12,
         "name": "Jean Baggy Nomade",
         "type":"Jean",
-        "price": 5,
+        "price": 18000,
         "img":"/img/pantalon3.jpeg",
         "quanty": 1
     }

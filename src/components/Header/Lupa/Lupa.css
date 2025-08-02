@@ -6,6 +6,7 @@
     top: 0;
     flex-wrap: wrap;
     transition: all 0.5s ease-in-out;
+    z-index: 5;
 }
 
 .header-lupa-abierto{

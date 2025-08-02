@@ -1,0 +1,69 @@
+.cardCarrito {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 325px;
+    border-bottom: 1px solid #00000099;
+    margin: 0 1rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+    
+.cardCarrito-boxImg {
+    grid-column: span 2 / span 2;
+    grid-row: span 5 / span 5;
+    width: 200px;
+    margin-right: .5rem;
+}
+
+.cardCarrito-boxImg img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.cardCarrito-nombre {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    text-wrap: pretty;
+    margin: auto;
+}
+
+.cardCarrito-precio {
+    grid-column: span 2 / span 2;
+    grid-column-start: 5;
+    margin: auto;
+}
+
+.cardCarrito-cantidad {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    margin: auto;
+    border: 1px solid #00000099;
+    padding: .4rem 1.2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.cardCarrito-cantidad-valor{
+    margin: 0 1.2rem;
+}
+
+.cardCarrito-total {
+    grid-column: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 2;
+    margin: auto;
+}
+
+.cardCarrito-btnEliminar {
+    grid-column: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 3;
+    margin: auto;
+}
+
+.carritoVacio{
+    text-align: center;
+}

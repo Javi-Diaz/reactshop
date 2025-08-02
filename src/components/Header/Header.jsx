@@ -1,11 +1,13 @@
 import { FaAlignJustify, FaSearch,FaUser,FaShoppingCart } from "react-icons/fa";
 import "./Header.css"
 import Menu from "./Menu/Menu";
-import { useState, useCallback, useContext } from "react";
+import { useState, useCallback, useContext, useEffect } from "react";
 import CarruselHeader from "./CarruselHeader/CarruselHeader";
 import Lupa from "./Lupa/Lupa";
 import { Link } from "react-router-dom";
 import { ModalContext } from "../../context/ModalContext";
+import Carrito from "../Carrito/Carrito";
+import { CarritoContext } from "../../context/CarritoContext";
 
 function Header({scrollToSection, inicioRef,loMasNuevoRef,destacadoRef,promocionesRef}){
     //Abrir menu
@@ -23,6 +25,24 @@ function Header({scrollToSection, inicioRef,loMasNuevoRef,destacadoRef,promocion
     //Mostrar modal EnProduccion
     const { toggleModal } = useContext(ModalContext);
 
+    //Abrir carrito
+    const [mostrarCarrito,setMostrarCarrito] = useState(false)
+    const toggleCarrito = useCallback(() => {
+        setMostrarCarrito(prev => !prev);
+    }, []);
+
+    //Activar carrito
+    const {carrito} = useContext(CarritoContext)
+    const [carritoActivo, setCarritoActivo] = useState(false);
+    // Detectar cuando hay al menos 1 producto
+    useEffect(() => {
+        if (carrito.length > 0) {
+            setCarritoActivo(true);
+        } else {
+            setCarritoActivo(false);
+        }
+    }, [carrito]);
+
     return(
         <header className="header">
             <CarruselHeader/>
@@ -33,7 +53,8 @@ function Header({scrollToSection, inicioRef,loMasNuevoRef,destacadoRef,promocion
                 <Lupa mostrarLupa={mostrarLupa} toggleLupa={toggleLupa}/>
                 <Link className="header-logo" to={"/"}><h1>ReactShop</h1></Link>
                 <FaUser onClick={toggleModal} className="header-navegation-icon user-icon" />
-                <FaShoppingCart onClick={toggleModal} className="header-navegation-icon cart-icon" />
+                <Link onClick={()=>{toggleCarrito()}}><FaShoppingCart className="header-navegation-icon cart-icon" /><div className={`${ carritoActivo ? "carrito-active" : "carrito-empty"}`}></div></Link>
+                <Carrito mostrarCarrito={mostrarCarrito} toggleCarrito={toggleCarrito}/>
             </div>
             
         </header>
