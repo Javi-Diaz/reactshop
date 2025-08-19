@@ -1,0 +1,44 @@
+.modalUsuario-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modalUsuario-label{
+    margin-bottom: .3rem;
+    display: flex;
+}
+
+.modalUsuario-input{
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    padding: 1rem 2rem 1rem .7rem;
+    flex-grow: 1;
+    outline: none;
+    border: 1px solid #00000099;
+    font-family: auto;
+}
+
+.modalUsuario-submit{
+    width: fit-content;
+    padding: .5rem;
+    border: 1px solid #00000078;
+    font-size: .95rem;
+    border-radius: 4px;
+    font-family: serif;
+    cursor: pointer;
+    margin: auto;
+}
+
+.modalUsuario-error{
+    margin-top: 1rem;
+}
+
+.modalUsuario-p{
+    margin-top: 1rem;
+}
+
+.modalUsuario-p span{
+    font-weight: bolder;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,99 @@
+.modalUsuario{
+    height: 100dvh;
+    width: 100dvw;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 15;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    filter: opacity(0);
+} 
+
+.modalUsuario-abierto{
+    top: 0%;
+    filter: opacity(1);
+}    
+
+.modalUsuario-sombra{
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: #000000c2;
+}
+
+.modalUsuario-boxForm{
+    margin: auto 1.5rem;
+    background-color: #ededed;
+    padding: 1rem;
+    border-radius: 12px;
+    position: relative;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.modalUsuario-boxForm h2{
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.modalUsuario-btnClose{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000021;
+    color: #0000006e;
+    font-family: arial;
+    cursor: pointer;
+}
+
+/* Animación desde arriba */
+@keyframes loginDesdeArriba {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animación desde abajo */
+@keyframes registroDesdeAbajo {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animar-login {
+    animation-name: loginDesdeArriba;
+}
+
+.animar-registro {
+    animation-name: registroDesdeAbajo;
+}
+
+
+
+@media screen and (min-width:1024px){
+    .modalUsuario-boxForm {
+        width: 500px;
+        margin: auto;
+    }
+}

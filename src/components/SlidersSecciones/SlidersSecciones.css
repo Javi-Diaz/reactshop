@@ -66,16 +66,22 @@
     }
 
     .slidersSecciones-boxCards{
-        justify-content: center;
+        /* justify-content: center; */
         scrollbar-width: thin;
     }
 
     .slidersSecciones-card{
-        width: 335px;
+        width: 320px;
         cursor: pointer;
     }
 
     .slidersSecciones-boxCards a{
         cursor: auto;
+    }
+}
+
+@media screen and (min-width:1440px){
+    .slidersSecciones-boxCards{
+        justify-content: center;
     }
 }

@@ -4,8 +4,9 @@ import { FaTrashAlt } from "react-icons/fa";
 import "./ProductosCarrito.css"
 
 function ProductosCarrito(){
-    const {carrito, setCarrito} = useContext(CarritoContext)
+    const {carrito, setCarrito, añadirCarrito, quitarCantidad} = useContext(CarritoContext)
 
+    // Quitar producto del carrito
     const eliminarProducto = (id)=>{
         const encontrarProducto = carrito.find((prod)=> prod.id === id)
 
@@ -29,13 +30,13 @@ function ProductosCarrito(){
                                     <h3>{producto.name}</h3>
                                 </div>
                                 <div className="cardCarrito-precio">
-                                    <h4>Cada prenda: ${producto.price}</h4>
+                                    <p>Cada prenda: </p><h4>${producto.price}</h4>
                                 </div>
                                 <div className="cardCarrito-cantidad">
-                                    <h4>-</h4><h4 className="cardCarrito-cantidad-valor">{producto.quanty}</h4><h4>+</h4>
+                                    <h4 onClick={()=>quitarCantidad(producto)}>-</h4><h4 className="cardCarrito-cantidad-valor">{producto.quanty}</h4><h4 onClick={()=>añadirCarrito(producto)}>+</h4>
                                 </div>
                                 <div className="cardCarrito-total">
-                                    <h4>Total: ${producto.price * producto.quanty}</h4>
+                                    <p>Total: </p><h4>${producto.price * producto.quanty}</h4>
                                 </div>
                                 <div className="cardCarrito-btnEliminar" onClick={()=>{eliminarProducto(producto.id)}}>
                                     <FaTrashAlt/>

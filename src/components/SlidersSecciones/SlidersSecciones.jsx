@@ -34,16 +34,7 @@ const SlidersSecciones = forwardRef(({titulo,data, id}, externalRef) => {
     const { toggleModal } = useContext(ModalContext);
 
     // Añadir al carrito
-    const {carrito, setCarrito} = useContext(CarritoContext)
-
-    const añadirCarrito = (producto)=>{
-        setCarrito(prevCarrito => {
-            const nuevoCarrito = [...prevCarrito, producto];
-            
-            return nuevoCarrito;
-        });
-        
-    }
+    const {añadirCarrito} = useContext(CarritoContext)
 
     return(
         <section id={id} ref={externalRef} className="slidersSecciones">
