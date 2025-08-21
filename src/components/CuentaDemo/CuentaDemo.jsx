@@ -20,8 +20,9 @@ function CuentaDemo() {
             {cuentaDemo && (
                 <div className="tooltip">
                 <strong>Cuenta demo:</strong><br />
-                Usuario: Jose Alvarez<br />
-                Contraseña: jose123
+                <strong>Usuario:</strong> Jose Alvarez<br />
+                <strong>Contraseña:</strong> jose123<br />
+                Para que se habilite el envio <br /> del pedido por WhatsApp tenes<br /> que registrarte realmente.
                 </div>
             )}
         </div>
