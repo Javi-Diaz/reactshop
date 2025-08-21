@@ -2,6 +2,7 @@ import "../Login/Login.css"
 import { useContext, useEffect, useState } from "react"
 import { UsuarioContext } from "../../../context/UsuarioContext"
 
+
 function Registrarse({setInicioSesion,inicioSesion}){
     const {registrarNuevoUsuario, 
             setRegistrarNuevoUsuario, 
@@ -53,17 +54,19 @@ function Registrarse({setInicioSesion,inicioSesion}){
     },[inicioSesion])
 
     // Limpia los capos del formulario cuando se cierra el modal
-        useEffect(()=>{
-            if(!mostrarUsuario || !inicioSesion){
-                setRegistrarNuevoUsuario({
-                    usuario: "",
-                    mail: "",
-                    numero: "",
-                    contraseña: ""
-                });
-            }
+    useEffect(()=>{
+        if(!mostrarUsuario || !inicioSesion){
+            setRegistrarNuevoUsuario({
+                usuario: "",
+                mail: "",
+                numero: "",
+                contraseña: ""
+            });
+        }
         
-          }, [mostrarUsuario])
+    }, [mostrarUsuario])
+
+    const [pais, setPais] = useState("54"); // por defecto Argentina        
 
     return(
         <>
@@ -74,9 +77,8 @@ function Registrarse({setInicioSesion,inicioSesion}){
                     <input 
                         className="modalUsuario-input" 
                         type="text" 
-                        placeholder="Nombre de usuario" 
+                        placeholder="Escribir nombre de usuario" 
                         id="nombreUsuario"
-                        value={registrarNuevoUsuario.usuario}
                         onChange={(e)=>{
                             setRegistrarNuevoUsuario({...registrarNuevoUsuario, usuario:e.target.value})
                             setErrorCampoIncompleto(false) // limpia error anterior al escribir
@@ -84,39 +86,41 @@ function Registrarse({setInicioSesion,inicioSesion}){
                         minLength="3" 
                         maxLength="15" 
                     />
-                    <label className="modalUsuario-label" htmlFor="email">Escribe tu email</label>
+                    <label className="modalUsuario-label" htmlFor="email">Registra tu email</label>
                     <input 
                         className="modalUsuario-input" 
                         type="email" 
-                        placeholder="Email" 
+                        placeholder="Escribir email" 
                         id="email"
-                        value={registrarNuevoUsuario.mail}
                         onChange={(e)=>{
                             setRegistrarNuevoUsuario({...registrarNuevoUsuario, mail:e.target.value})
                             setErrorCampoIncompleto(false) // limpia error anterior al escribir
                         }}
                         />
-                    <label className="modalUsuario-label" htmlFor="celular">Escribe tu numero de celular</label>
+                    <label className="modalUsuario-label" htmlFor="celular">Registra tu numero de celular </label>
+                    <select value={pais} onChange={e => setPais(e.target.value)} className="modalUsuario-select">
+                        <option value="54">🇦🇷 Argentina (+54)</option>
+                        <option value="52">🇲🇽 México (+52)</option>
+                        <option value="34">🇪🇸 España (+34)</option>
+                        <option value="1">🇺🇸 USA (+1)</option>
+                    </select>
                     <input 
                         className="modalUsuario-input" 
                         type="tel" 
-                        placeholder="Celular" 
+                        placeholder="Escribir numero de celular sin 0 ni +" 
                         id="celular"
-                        value={registrarNuevoUsuario.numero}
                         onChange={(e)=>{
-                            setRegistrarNuevoUsuario({...registrarNuevoUsuario, numero:e.target.value})
+                            setRegistrarNuevoUsuario({...registrarNuevoUsuario, numero: pais + e.target.value})
                             setErrorCampoIncompleto(false) // limpia error anterior al escribir
                         }}    
                         minLength="8" 
-                        
                     />
                     <label className="modalUsuario-label" htmlFor="contraseña">Crea una contraseña</label>
                     <input 
                         className="modalUsuario-input" 
                         type="password" 
-                        placeholder="Contraseña" 
+                        placeholder="Escribir contraseña" 
                         id="contraseña"
-                        value={registrarNuevoUsuario.contraseña}
                         onChange={(e)=>{
                             setRegistrarNuevoUsuario({...registrarNuevoUsuario, contraseña:e.target.value})
                             setErrorCampoIncompleto(false) // limpia error anterior al escribir

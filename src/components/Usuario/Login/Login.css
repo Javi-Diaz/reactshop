@@ -42,3 +42,9 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.modalUsuario-select{
+    width: fit-content;
+    margin-bottom: .3rem;
+    padding: .2rem;
+}
