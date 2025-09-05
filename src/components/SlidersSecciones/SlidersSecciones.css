@@ -56,6 +56,11 @@
     cursor: pointer;
 }
 
+.slidersSecciones-card-btn:hover{
+    background-color: #000000c9;
+    color: #fff;
+}
+
 @media screen and (min-width:1024px){
     .slidersSecciones{
     scroll-margin-top: 222px;

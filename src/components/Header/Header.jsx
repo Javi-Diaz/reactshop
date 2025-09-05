@@ -10,10 +10,10 @@ import Carrito from "../Carrito/Carrito";
 import { CarritoContext } from "../../context/CarritoContext";
 import Usuario from "../Usuario/Usuario";
 import { UsuarioContext } from "../../context/UsuarioContext";
-import BienvenidoModal from "../BienvenidoModal/BienvenidoModal";
-import ModalRegistroExitoso from "../ModalRegistroExitoso/ModalRegistroExitoso";
+import BienvenidoModal from "../Modales/BienvenidoModal/BienvenidoModal";
+import ModalRegistroExitoso from "../Modales/ModalRegistroExitoso/ModalRegistroExitoso";
 
-function Header({scrollToSection, inicioRef,loMasNuevoRef,destacadoRef,promocionesRef}){
+function Header(){
     //Abrir menu
     const [mostrarMenu,setMostrarMenu] = useState(false)
     const toggleMenu = useCallback(() => {
@@ -75,7 +75,7 @@ function Header({scrollToSection, inicioRef,loMasNuevoRef,destacadoRef,promocion
             <CarruselHeader/>
             <div className="header-navegation">
                 <FaAlignJustify className="header-navegation-icon menu-icon" onClick={()=>{toggleMenu()}}/>
-                <Menu mostrarMenu={mostrarMenu} toggleMenu={toggleMenu} scrollToSection={scrollToSection} inicioRef={inicioRef} loMasNuevoRef={loMasNuevoRef} destacadoRef={destacadoRef} promocionesRef={promocionesRef}/>
+                <Menu mostrarMenu={mostrarMenu} toggleMenu={toggleMenu} />
                 <FaSearch className="header-navegation-icon search-icon" onClick={()=>{toggleLupa()}}/>
                 <Lupa mostrarLupa={mostrarLupa} toggleLupa={toggleLupa}/>
                 <Link className="header-logo" to={"/"}><h1>ReactShop</h1></Link>

@@ -29,6 +29,11 @@
     margin: auto;
 }
 
+.modalUsuario-submit:hover{
+    color: #fff;
+    background-color: #000000c9;
+}
+
 .modalUsuario-error{
     margin-top: 1rem;
 }

@@ -1,0 +1,19 @@
+.products-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.products-header h3{
+    font-size: 1.5rem;
+}
+
+.products-header button{
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.products-header button:hover {
+ color: #fff;
+ background-color: #000000c9;
+}

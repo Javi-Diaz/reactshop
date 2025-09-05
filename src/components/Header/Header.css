@@ -43,7 +43,10 @@
     bottom: 0;
     right: -5px;
     box-shadow: 0 0 10px 4px #0072ff;
+}
 
+.menu-icon:hover, .search-icon:hover, .user-icon:hover, .cart-icon:hover{
+    color: #00000075;
 }
 
 @media screen and (min-width:1024px){

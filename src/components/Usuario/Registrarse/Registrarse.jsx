@@ -115,12 +115,12 @@ function Registrarse({setInicioSesion,inicioSesion}){
                         }}    
                         minLength="8" 
                     />
-                    <label className="modalUsuario-label" htmlFor="contraseña">Crea una contraseña</label>
+                    <label className="modalUsuario-label" htmlFor="crearContraseña">Crea una contraseña</label>
                     <input 
                         className="modalUsuario-input" 
                         type="password" 
                         placeholder="Escribir contraseña" 
-                        id="contraseña"
+                        id="crearContraseña"
                         onChange={(e)=>{
                             setRegistrarNuevoUsuario({...registrarNuevoUsuario, contraseña:e.target.value})
                             setErrorCampoIncompleto(false) // limpia error anterior al escribir

@@ -48,6 +48,11 @@
     border-radius: 2px;
 }
 
+.cardCarrito-cantidad-operador{
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
 .cardCarrito-cantidad-valor{
     margin: 0 1.2rem;
 }
@@ -67,6 +72,12 @@
     padding: .5rem 1.2rem;
     border: 1px solid #00000099;
     border-radius: 2px;
+    cursor: pointer;
+}
+
+.cardCarrito-btnEliminar:hover{
+    color: #fff;
+    background-color: #000000c9;
 }
 
 .carritoVacio{

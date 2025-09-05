@@ -33,7 +33,9 @@ function ProductosCarrito(){
                                     <p>Cada prenda: </p><h4>${producto.price}</h4>
                                 </div>
                                 <div className="cardCarrito-cantidad">
-                                    <h4 onClick={()=>quitarCantidad(producto)}>-</h4><h4 className="cardCarrito-cantidad-valor">{producto.quanty}</h4><h4 onClick={()=>añadirCarrito(producto)}>+</h4>
+                                    <h4 className="cardCarrito-cantidad-operador" onClick={()=>quitarCantidad(producto)}>-</h4>
+                                    <h4 className="cardCarrito-cantidad-valor">{producto.quanty}</h4>
+                                    <h4 className="cardCarrito-cantidad-operador" onClick={()=>añadirCarrito(producto)}>+</h4>
                                 </div>
                                 <div className="cardCarrito-total">
                                     <p>Total: </p><h4>${producto.price * producto.quanty}</h4>

@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { UsuarioContext } from "../../context/UsuarioContext";
-import ModalRegistroCarrito from "../ModalRegistroEnviarCarrito/ModalRegistroEnviarCarrito";
+import ModalRegistroCarrito from "../Modales/ModalRegistroEnviarCarrito/ModalRegistroEnviarCarrito";
 
 
 function Carrito({mostrarCarrito, toggleCarrito}){
@@ -64,7 +64,7 @@ function Carrito({mostrarCarrito, toggleCarrito}){
                 { carritoActivo > 0 ? 
                     <div className="modalCarrito-footer">
                         <div className="modalCarrito-footer-total">
-                            <h3>Total:</h3> <h3>${total}</h3>
+                            <h3 className="modalCarrito-footer-total-texto">Total:</h3> <h3 className="modalCarrito-footer-total-valor">${total}</h3>
                         </div>
                         
                         <button className="modalCarrito-footer-btn" onClick={handleClick}><FaWhatsapp/> Enviar pedido por WhatsApp</button>

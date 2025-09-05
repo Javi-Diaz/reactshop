@@ -3,9 +3,11 @@ import "./Menu.css"
 import { useState, useContext } from "react";
 import LogoRedes from "../../LogoRedes/LogoRedes";
 import { ModalContext } from "../../../context/ModalContext";
+import { HashLink } from "react-router-hash-link"
+import { FiltroContext } from "../../../context/FiltroContext";
 
 
-function Menu({toggleMenu, mostrarMenu, scrollToSection, inicioRef,loMasNuevoRef, destacadoRef, promocionesRef}){
+function Menu({toggleMenu, mostrarMenu}){
     const [changeIcon, setChangeIcon] = useState(false)
     const toggleIcon= ()=>{
         setChangeIcon(!changeIcon)
@@ -13,6 +15,8 @@ function Menu({toggleMenu, mostrarMenu, scrollToSection, inicioRef,loMasNuevoRef
 
     //Mostar modal en produccion
     const { toggleModal } = useContext(ModalContext);   
+
+    const { setCategoria } = useContext(FiltroContext)
 
     return(
             <div className={`menu ${mostrarMenu ? "menu-abierto" : ""}`}>
@@ -24,36 +28,56 @@ function Menu({toggleMenu, mostrarMenu, scrollToSection, inicioRef,loMasNuevoRef
                 </div>
                 <nav className="menu-nav">
                     <ul>
-                        <li><NavLink onClick={()=>{
-                            scrollToSection(inicioRef)
+                        <li><HashLink smooth to="/#inicio" onClick={()=>{
                             toggleMenu()
-                            }}>Inicio</NavLink></li>
-                        <li><NavLink onClick={()=>{
-                            scrollToSection(loMasNuevoRef)
+                            }}>Inicio</HashLink></li>
+                        <li><HashLink smooth to="/#loMasNuevo" onClick={()=>{
                             toggleMenu()
-                            }}>Lo mas nuevo</NavLink></li>
-                        <li><NavLink onClick={()=>{
-                            scrollToSection(destacadoRef)
+                            }}>Lo mas nuevo</HashLink></li>
+                        <li><HashLink smooth to="/#destacado" onClick={()=>{
                             toggleMenu()
-                        }}>Destacado</NavLink></li>
-                        <li>
+                        }}>Destacado</HashLink></li>
+                        <li id="li-menu-nav-desplegable">
                             <div className="menu-nav-desplegable">
                                 <div className="menu-nav-header" onClick={()=>{toggleIcon()}}>Productos <span>{changeIcon ? "-" : "+"}</span></div>
                                 <div className={`menu-nav-content ${changeIcon ? "menu-nav-content-abierto" : ""}`}>
                                     <ul>
-                                        <li><NavLink onClick={toggleModal}>Remeras</NavLink></li>
-                                        <li><NavLink onClick={toggleModal}>Buzos</NavLink></li>
-                                        <li><NavLink onClick={toggleModal}>Camperas</NavLink></li>
-                                        <li><NavLink onClick={toggleModal}>Jeans</NavLink></li>
+                                        <li><NavLink to={"/Products"} onClick={()=>{
+                                            setCategoria("todos")
+                                            toggleMenu()
+                                        }}>Todos los productos</NavLink></li>
+                                        <li><NavLink
+                                            to={"/Products"}
+                                        onClick={()=>{
+                                            setCategoria("Remera")
+                                            toggleMenu()
+                                        }}>Remeras</NavLink></li>
+                                        <li><NavLink
+                                            to={"/Products"}
+                                        onClick={()=>{
+                                            setCategoria("Buzo")
+                                            toggleMenu()
+                                        }}>Buzos</NavLink></li>
+                                        <li><NavLink
+                                            to={"/Products"}
+                                        onClick={()=>{
+                                            setCategoria("Campera")
+                                            toggleMenu()
+                                        }}>Camperas</NavLink></li>
+                                        <li><NavLink
+                                            to={"/Products"}
+                                        onClick={()=>{
+                                            setCategoria("Jean")
+                                            toggleMenu()
+                                        }}>Jeans</NavLink></li>
                                     </ul>
                                 </div>
                                 
                             </div>
                         </li>
-                        <li><NavLink onClick={()=>{
-                            scrollToSection(promocionesRef)
+                        <li><HashLink smooth to="/#promociones" onClick={()=>{
                             toggleMenu()
-                        }}>Promociones</NavLink></li>
+                        }}>Promociones</HashLink></li>
                     </ul>
                     
                 </nav>

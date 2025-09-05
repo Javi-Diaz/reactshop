@@ -1,5 +1,3 @@
-import { FaInstagram, FaFacebookF,FaWhatsapp } from "react-icons/fa";
-import { NavLink, Link } from "react-router-dom";
 import mp from "../../../public/img/footer/mp.jpg"
 import mastercard from "../../../public/img/footer/mastercard.jpg"
 import visa from "../../../public/img/footer/visa.jpg"
@@ -7,6 +5,7 @@ import american from "../../../public/img/footer/american.jpg"
 import pagoFacil from "../../../public/img/footer/pagoFacil.jpg"
 import "./Footer.css"
 import LogoRedes from "../LogoRedes/LogoRedes";
+import { HashLink } from "react-router-hash-link"
 
 function Footer(){
     return(
@@ -23,10 +22,17 @@ function Footer(){
             </div>
             <div className="footer-categorias">
                 <h4>Categorias</h4>
-                <Link>Inicio</Link>
-                <Link>Lo mas nuevo</Link>
-                <Link>Destacado</Link>
-                <Link>Productos</Link>
+                <HashLink 
+                smooth to="/#inicio"
+                >Inicio</HashLink >
+                <HashLink smooth to="/#loMasNuevo"
+                >Lo mas nuevo</HashLink >
+                <HashLink smooth to="/#destacado"
+                >Destacado</HashLink >
+                <HashLink smooth to="/#promociones"
+                >Promociones</HashLink >
+                <HashLink smooth to="/Products"
+                >Productos</HashLink >
             </div>
             <div className="footer-pagos">
                 <h4>Metodos de pago</h4>

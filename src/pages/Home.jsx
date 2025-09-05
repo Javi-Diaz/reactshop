@@ -8,7 +8,7 @@ import Footer from "../components/Footer/Footer";
 import BtnWspp from "../components/BtnWspp/BtnWspp";
 import { ProductsContext } from "../context/ProductContext";
 import { ModalContext } from "../context/ModalContext";
-import ModalEnProduccion from "../components/ModalEnProduccion/ModalEnProduccion";
+import ModalEnProduccion from "../components/Modales/ModalEnProduccion/ModalEnProduccion"
 import Loader from "../components/Loader/Loader";
 const SliderInicio = lazy(()=>import("../components/SliderInicio/SliderInicio"))
 
@@ -67,7 +67,7 @@ function Home(){
             </Suspense>
             <Cuadricula/>
             <SubscribeForm/>
-            <Footer/>
+            <Footer />
             <ModalEnProduccion mostrarModal={mostrarModal} toggleModal={toggleModal} />
         </>
     )

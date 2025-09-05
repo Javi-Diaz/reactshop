@@ -57,6 +57,11 @@
     cursor: pointer;
 }
 
+.modalUsuario-btnClose:hover{
+    color: #fff;
+    background-color: #000000c9;
+}
+
 /* Animación desde arriba */
 @keyframes loginDesdeArriba {
     from {

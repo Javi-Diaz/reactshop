@@ -10,6 +10,7 @@ const SlidersSecciones = forwardRef(({titulo,data, id}, externalRef) => {
     const containerRef = useRef(null);
     const [index, setIndex] = useState(1); 
 
+    // Hace que se muestre la posicion de producto
     useEffect(() => {
         const container = containerRef.current;
 
@@ -30,6 +31,7 @@ const SlidersSecciones = forwardRef(({titulo,data, id}, externalRef) => {
         return () => container.removeEventListener("scroll", handleScroll);
     }, []);
 
+
     //Mostrar modal EnProduccion
     const { toggleModal } = useContext(ModalContext);
 
@@ -45,7 +47,7 @@ const SlidersSecciones = forwardRef(({titulo,data, id}, externalRef) => {
                     data.map((product,index)=>{
                         return(
                             <Link key={index} >
-                                <div className="slidersSecciones-card" /* onClick={toggleModal} */>
+                                <div className="slidersSecciones-card" >
                                     <img src={product.img} alt="imagen-producto" className="slidersSecciones-card-img"/>
                                     <br />
                                     <h3>{product.name}</h3>

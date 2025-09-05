@@ -6,34 +6,45 @@ import imgJean from "../../../public/img/pantalon2.jpeg";
 import "./Cuadricula.css"
 import { useContext } from "react";
 import { ModalContext } from "../../context/ModalContext";
+import { FiltroContext } from "../../context/FiltroContext";
 
 function Cuadricula(){
     const {toggleModal} = useContext(ModalContext)
 
+    const { setCategoria } = useContext(FiltroContext)
+
     return(
         <section id="cuadricula" className="cuadricula">
-            <Link onClick={toggleModal}>
+            <Link to={"/Products"} onClick={()=>{
+                setCategoria("Remera")
+            }}>
                 <div className="cuadricula-card">
                     <div className="cuadricula-card-sombra"></div>
                     <img src={imgRemera} alt="imagen-seccion" />
                     <h3>Remeras</h3>
                 </div>
             </Link>
-            <Link onClick={toggleModal}>
+            <Link to={"/Products"} onClick={()=>{
+                setCategoria("Buzo")
+            }}>
                 <div className="cuadricula-card">
                     <div className="cuadricula-card-sombra"></div>
                     <img src={imgBuzo} alt="imagen-seccion" />
                     <h3>Buzos</h3>
                 </div>
             </Link>
-            <Link onClick={toggleModal}>
+            <Link to={"/Products"} onClick={()=>{
+                setCategoria("Campera")
+            }}>
                 <div className="cuadricula-card">
                     <div className="cuadricula-card-sombra"></div>
                     <img src={imgCampera} alt="imagen-seccion" />
                     <h3>Camperas</h3>
                 </div>
             </Link>
-            <Link onClick={toggleModal}>
+            <Link to={"/Products"} onClick={()=>{
+                setCategoria("Jean")
+            }}>
                 <div className="cuadricula-card">
                     <div className="cuadricula-card-sombra"></div>
                     <img src={imgJean} alt="imagen-seccion" />

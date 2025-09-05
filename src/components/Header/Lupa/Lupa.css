@@ -43,6 +43,11 @@
     border-left: none;
 }
 
+.header-lupa-btnCerrar:hover{
+    color: #fff;
+    background-color: #000000c9;
+}
+
 .header-lupa-resultados{
     width: 100dvw;
     min-height: calc(100dvh - 123px );
