@@ -52,7 +52,7 @@ function Header(){
         setMostrarUsuario(prev => !prev);
     }, []);
 
-    const {usuarioLogueado, cerrarSesion, setMostrarUsuario,  registroExitoso} =  useContext(UsuarioContext)
+    const {usuarioLogueado, cerrarSesion, setMostrarUsuario,  registroExitoso, limpiarRegistroExitoso, mostrarModalBienvenida,limpiarMostrarBienvenida} =  useContext(UsuarioContext)
     
     // Mostrar modalBienvenido
     const [mostrarBienvenida, setMostrarBienvenida] = useState(false);
@@ -79,10 +79,13 @@ function Header(){
                 <FaSearch className="header-navegation-icon search-icon" onClick={()=>{toggleLupa()}}/>
                 <Lupa mostrarLupa={mostrarLupa} toggleLupa={toggleLupa}/>
                 <Link className="header-logo" to={"/"}><h1>ReactShop</h1></Link>
-                {mostrarBienvenida && (
+                {mostrarModalBienvenida && (
                     <BienvenidoModal
                         nombre={usuarioLogueado?.usuario}
-                        cerrar={() => setMostrarBienvenida(false)}
+                        cerrar={() =>{
+                                setMostrarBienvenida(false)
+                                limpiarMostrarBienvenida()
+                            }}
                     />
                 )}
                 {usuarioLogueado ?
@@ -91,7 +94,11 @@ function Header(){
                  <FaUser onClick={toggleUsuario} className="header-navegation-icon user-icon" />}
                 {mostrarModalRegistroExitoso &&(
                     <ModalRegistroExitoso
-                        cerrar={() => setMostrarModalRegistroExitoso(false)}
+                        cerrar={() => {
+                            
+                            setMostrarModalRegistroExitoso(false);
+                            limpiarRegistroExitoso()
+                        }}
                     />)
                 }
                 <Usuario toggleUsuario={toggleUsuario}/>

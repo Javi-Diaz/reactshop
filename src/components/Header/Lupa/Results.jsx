@@ -1,6 +1,7 @@
 import { useMemo, useContext } from "react";
 import "./Results.css"
 import { ProductsContext } from "../../../context/ProductContext";
+import { Link } from "react-router-dom";
 
 function Results({busqueda}){
     const products = useContext(ProductsContext)
@@ -18,12 +19,15 @@ function Results({busqueda}){
             </div>
         )
     }else{
-        return (productosFiltrados.map((product)=>{
+        return (productosFiltrados.map((product, index)=>{
             return(
-                <div key={product.id} className="cajaProduct">
-                    <img src={product.img} alt="imagen-producto" />
-                    <h3>{product.name}</h3>
-                </div>
+                <Link key={index} to={`/products/${product.id}`}>
+                    <div key={product.id} className="cajaProduct">
+                        <img src={product.img} alt="imagen-producto" />
+                        <h3>{product.name}</h3>
+                    </div>
+                </Link>
+                
     
             )
         }))

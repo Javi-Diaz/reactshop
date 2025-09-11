@@ -14,14 +14,18 @@ function ProductsInProductsPage() {
             {
                 productosDesdeHasta.map((product,index)=>{
                     return(
-                        <Link key={index} id={index}>
+                        <Link key={index} id={index} to={`/products/${product.id}`}>
                             <div className="products-boxCard">
                                 <img src={product.img} />
                                 <br />
                                 <h3>{product.name}</h3>
                                 <span>${product.price}</span>
                                 <br />
-                                <button className="products-cardBtn" onClick={()=>añadirCarrito(product)}>Añadir al carrito</button>
+                                <button className="products-cardBtn" onClick={(e)=>{
+                                    e.preventDefault(); // evita que el Link se active
+                                    e.stopPropagation(); // evita que el evento burbujee al Link
+                                    añadirCarrito(product)
+                                    }}>Añadir al carrito</button>
                             </div>
                         </Link>
                         

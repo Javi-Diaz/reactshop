@@ -51,7 +51,6 @@
     @media screen and (min-width: 1024px) {
         .section-products{
             grid-template-columns: 280px 280px 280px 280px;
-            /* grid-template-rows: auto; */
             justify-content: center;
             gap: 3.5rem;
         }

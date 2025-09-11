@@ -13,15 +13,19 @@ export function UsuarioProvider(props){
 
     // Mostrar formulario de iniciar sesion o registrarse
     const [mostrarUsuario, setMostrarUsuario] = useState(false)  
-    
 
+    const [mostrarModalBienvenida, setMostrarModalBienvenida] = useState(false);
+
+    const limpiarMostrarBienvenida = () => setMostrarModalBienvenida(false);
+    
     // Iniciar sesion y verifica si ya esta registrado
     const [usuarioLogueado, setUsuarioLogueado] = useState(null);
     const iniciarSesion = (user)=>{
         const usuarioEncontrado = usuariosRegistrados.find((usu)=> usu.usuario.toLocaleLowerCase() === user.usuario && usu.contraseña === user.contraseña)
         
         if (usuarioEncontrado) {
-            setUsuarioLogueado(usuarioEncontrado); // <--- Guardar usuario actual
+            setUsuarioLogueado(usuarioEncontrado);
+            setMostrarModalBienvenida(true); // <--- Guardar usuario actual
             return true;
         }
         return false;
@@ -51,6 +55,9 @@ export function UsuarioProvider(props){
         return false
     }
 
+    const limpiarRegistroExitoso = () => setRegistroExitoso(false);
+
+    
     
     return(
         <UsuarioContext.Provider value={{
@@ -65,7 +72,10 @@ export function UsuarioProvider(props){
             setRegistrarNuevoUsuario,
             usuarioYaRegistrado,
             registroExitoso,
-            setRegistroExitoso
+            setRegistroExitoso,
+            limpiarRegistroExitoso,
+            mostrarModalBienvenida, 
+            limpiarMostrarBienvenida
             }}>
             {props.children}
         </UsuarioContext.Provider>

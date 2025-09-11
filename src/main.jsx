@@ -9,21 +9,33 @@ import { CarritoProvider } from './context/CarritoContext.jsx'
 import { UsuarioProvider } from './context/UsuarioContext.jsx'
 import Products from "./pages/Products.jsx"
 import { FiltroProvider } from './context/FiltroContext.jsx'
+import Product from './pages/Product.jsx'
+import RootLayout from './layouts/RootLayout.jsx'
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element: <App/>
-  },
-  {
-    path:"/products",
-    element: <Products/>
-  }
-])
+    path: "/",
+    element: <RootLayout/>,
+    children:[
+      {
+        index: true,
+        element: <App/>
+      },
+      {
+        path:"products",
+        element: <Products/>
+      },
+      {
+        path: "products/:id",
+        element: <Product />
+      }
+      ]
+    }
+  ]
+)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    
     <UsuarioProvider>
       <CarritoProvider>
         <ProductContextProvider>
@@ -31,8 +43,7 @@ createRoot(document.getElementById('root')).render(
             <ModalProvider>
               <RouterProvider router={router} />
             </ModalProvider>
-          </FiltroProvider>
-          
+          </FiltroProvider>   
         </ProductContextProvider> 
       </CarritoProvider>
     </UsuarioProvider>

@@ -93,5 +93,6 @@
 
     .header-resultadosBusqueda{
         height: auto;
+        max-height: 550px;
     }
 }

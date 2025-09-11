@@ -46,14 +46,18 @@ const SlidersSecciones = forwardRef(({titulo,data, id}, externalRef) => {
                 {
                     data.map((product,index)=>{
                         return(
-                            <Link key={index} >
+                            <Link key={index} to={`/products/${product.id}`}>
                                 <div className="slidersSecciones-card" >
                                     <img src={product.img} alt="imagen-producto" className="slidersSecciones-card-img"/>
                                     <br />
                                     <h3>{product.name}</h3>
                                     <span>${product.price}</span>
                                     <br />
-                                    <button className="slidersSecciones-card-btn" onClick={()=>añadirCarrito(product)}>Añadir al carrito</button>
+                                    <button className="slidersSecciones-card-btn" onClick={(e)=>{
+                                        e.preventDefault(); // evita que el Link se active
+                                        e.stopPropagation(); // evita que el evento burbujee al Link
+                                        añadirCarrito(product)
+                                        }}>Añadir al carrito</button>
                                 </div>
                             </Link>
 
